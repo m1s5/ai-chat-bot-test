@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  background-color: black;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}
+th {
+  border-bottom: 1px solid black;
+}
+tr:nth-child(even) {
+  background-color: #11111141;
+}

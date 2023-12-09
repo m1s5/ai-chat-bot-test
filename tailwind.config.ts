@@ -6,9 +6,23 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
+        sans: [...fontFamily.sans],
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".no-scrollbar::-webkit-scrollbar": {
+          display: "none",
+        },
+        ".no-scrollbar": {
+          "ms-overflow-style": "none",
+          "scrollbar-width": "none",
+        },
+        ".max-w-message": { "max-width": "40ch" },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
 } satisfies Config;
