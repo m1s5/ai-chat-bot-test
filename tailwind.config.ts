@@ -11,7 +11,8 @@ export default {
     },
   },
   plugins: [
-    function ({ addUtilities }) {
+    //@ts-ignore
+    function({ addUtilities }) {
       const newUtilities = {
         ".no-scrollbar::-webkit-scrollbar": {
           display: "none",

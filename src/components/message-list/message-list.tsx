@@ -6,7 +6,21 @@ export type Message = {
   type: "user" | "bot";
   data: {
     textContent: string;
-    charData?: unknown;
+    charData?: {
+      type: string;
+      title: string;
+      xAxis: {
+        categories: string[];
+        title: string;
+      };
+      yAxis: {
+        title: string;
+      };
+      series: {
+        name: string;
+        data: number[];
+      }[];
+    };
   };
 };
 

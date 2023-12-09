@@ -19,7 +19,11 @@ export default function Home() {
             ms.concat({ type: "user", data: { textContent: v.trim() } }),
           );
           setTimeout(
-            () => setMessages((ms) => ms.concat(mockMessages[1])),
+            () =>
+              setMessages((ms) => {
+                if (mockMessages[1]) return ms.concat(mockMessages[1]);
+                return ms;
+              }),
             2000,
           );
         }}
