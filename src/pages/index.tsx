@@ -9,11 +9,21 @@ export default function Home() {
   return (
     <>
       <div className="relative flex min-h-0 w-full flex-shrink">
-        <div className="no-scrollbar flex w-full flex-col gap-2 overflow-y-scroll rounded-md bg-slate-800 p-5">
-          <MessageList messages={messages} />
-        </div>
+        <MessageList messages={messages} />
       </div>
-      <QueryInput clearAfterSend={true} onSend={(v) => console.log(v.trim())} />
+      <QueryInput
+        clearAfterSend={true}
+        onSend={(v) => {
+          if (!v) return;
+          setMessages((ms) =>
+            ms.concat({ type: "user", data: { textContent: v.trim() } }),
+          );
+          setTimeout(
+            () => setMessages((ms) => ms.concat(mockMessages[1])),
+            2000,
+          );
+        }}
+      />
     </>
   );
 }
