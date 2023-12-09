@@ -13,7 +13,7 @@ export default function NavigationLayout({ children }: NavigationLayoutProps) {
       <Head>
         <title>AI Chat</title>
       </Head>
-      <div className="fixed  flex h-screen min-h-0 w-full flex-col bg-gradient-to-b from-gray-700 to-black  font-sans text-white [font-size:_clamp(1em,2vw,1.5em)]">
+      <div className="fixed flex h-full min-h-0 w-full flex-col bg-gradient-to-b from-gray-700 to-black  font-sans text-white [font-size:_clamp(1em,2vw,1.5em)]">
         <nav className="border-gray-200 bg-white dark:bg-gray-900">
           <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
             <a
