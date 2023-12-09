@@ -20,6 +20,54 @@ color="lt-cyan">18%</font> compared to last week.\n\n
 Growth: An <font color="lt-cyan">18%</font> increase in DAU compared to last week reflects a
 growing user base and heightened engagement.\n\n\n\n\n${tableMD}`;
 
+export const charData = {
+  type: "line",
+  title: "Monthly Sales Data",
+  xAxis: {
+    categories: [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ],
+    title: "Months",
+  },
+  yAxis: {
+    title: "Sales (in USD)",
+  },
+  series: [
+    {
+      name: "2023",
+      data: [
+        12000, 18000, 15000, 21000, 24000, 22000, 19000, 23000, 25000, 27000,
+        30000, 32000,
+      ],
+    },
+    {
+      name: "2022",
+      data: [
+        10000, 14000, 12000, 16000, 20000, 18000, 17000, 21000, 23000, 25000,
+        28000, 29000,
+      ],
+    },
+    {
+      name: "2021",
+      data: [
+        8900, 12730, 11011, 15325, 19186, 17185, 15527, 20145, 22054, 23980,
+        26698, 27943,
+      ],
+    },
+  ],
+};
+
 export const messages: Message[] = [
   {
     type: "user",
@@ -32,7 +80,7 @@ export const messages: Message[] = [
     type: "bot",
     data: {
       textContent: markdownData,
-      charData: [],
+      charData,
     },
   },
 ];

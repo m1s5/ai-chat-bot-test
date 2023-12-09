@@ -26,27 +26,40 @@ ChartJS.defaults.backgroundColor = "#5eead4";
 ChartJS.defaults.borderColor = "#115e59";
 ChartJS.defaults.color = "white";
 
-export const BarChart = () => {
-  const data = [
-    { year: 2010, count: 10 },
-    { year: 2011, count: 20 },
-    { year: 2012, count: 15 },
-    { year: 2013, count: 25 },
-    { year: 2014, count: 22 },
-    { year: 2015, count: 30 },
-    { year: 2016, count: 28 },
-  ];
+type BarChartProps = {
+  charData: {
+    type: string;
+    title: string;
+    xAxis: {
+      categories: string[];
+      title: string;
+    };
+    yAxis: {
+      title: string;
+    };
+    series: {
+      name: string;
+      data: number[];
+    }[];
+  };
+};
 
+const charColors = ["lavender", "tomato", "lightblue"];
+
+export const BarChart = ({ charData }: BarChartProps) => {
   return (
     <Bar
       data={{
-        labels: data.map((row) => row.year),
-        datasets: [
-          {
-            label: "Acquisitions by year",
-            data: data.map((row) => row.count),
-          },
-        ],
+        labels: charData.xAxis.categories,
+        datasets: charData.series.map((item, id) => ({
+          label: item.name,
+          data: item.data,
+          backgroundColor: charColors[id % charColors.length],
+        })),
+        // {
+        //   label: "Acquisitions by year",
+        //   data: data.map((row) => row.count),
+        // },
       }}
       options={{
         scales: {

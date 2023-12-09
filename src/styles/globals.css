@@ -9,10 +9,17 @@ html {
 table {
   width: 100%;
   text-align: center;
+  background-color: gray;
+  border-radius: 0.2rem;
 }
 th {
+  background-color: #0d9488;
   border-bottom: 1px solid black;
+  border-radius: 0.2rem;
 }
 tr:nth-child(even) {
   background-color: #11111141;
+}
+td {
+  padding: 6px;
 }
